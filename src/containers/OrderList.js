@@ -11,13 +11,15 @@ const OrderList = (props) => {
     return <List >
         {
             foodSelected.map((item, index) => {
-                return <CardWithTime 
-                        key={item.id + index} 
-                        image={item.thumbnail} 
+                return (
+                    <CardWithTime
+                        key={item.id + index}
+                        image={item.thumbnail}
                         title={item.name}
-                        time={30}
-                        onClick = {() => removeFoodSelected(index)}
+                        time={item["preparation_time"]}
+                        onClick={() => removeFoodSelected(index)}
                     />
+                );
             })
         }
     </List>

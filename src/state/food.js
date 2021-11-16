@@ -18,8 +18,7 @@ const useFoodStore = create(set => ({
                 ...state, 
                 foodSelected: foodSelectedCopy,
             }
-        });                   
-    
+        });           
     },
     removeFoodSelected: (foodIndex) => {
         set(state =>{
@@ -29,7 +28,7 @@ const useFoodStore = create(set => ({
                 ...state, 
                 foodSelected: foodSelectedCopy,
             }
-        }); 
+        });
     }
 }));
 
