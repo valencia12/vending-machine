@@ -1,0 +1,12 @@
+.MenuList {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    align-items: center;
+    height: 30rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}

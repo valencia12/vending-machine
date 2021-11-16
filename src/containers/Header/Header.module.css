@@ -1,0 +1,21 @@
+.Header {
+    background-color: #2c3536;
+    background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
+    position: relative;
+    margin: 2rem; 
+    box-shadow: 5px 1px 1px 0 rgba(0, 0, 0, 0.05);
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    font-size: 14px;
+    height: 30vh;
+    width: 90vw;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.Header img {
+    height: 70%;
+}
