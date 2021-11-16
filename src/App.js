@@ -1,10 +1,21 @@
 
+import {useEffect} from 'react';
+
 import './App.css';
 import Header from './containers/Header/Header';
-import MenuList from './containers/MenuList/MenuList';
-import OrderList from './containers/OrderList/OrderList';
+import MenuList from './containers/MenuList';
+import OrderList from './containers/OrderList';
+import useFoodStore from './state/food'; 
+
 
 function App() { 
+
+  const initializeFood = useFoodStore(state => state.initializeFood);
+
+  useEffect(() => {
+    initializeFood();
+  }, [initializeFood]); 
+
   return (
     <div className="App">
       <Header />

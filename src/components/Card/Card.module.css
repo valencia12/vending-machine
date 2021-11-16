@@ -1,11 +1,38 @@
 .card{
+    position: relative;
     min-width: 20rem;
     margin: 0 1rem;
-    height: 20rem; 
+    height: 15rem; 
     border-radius: 0.5rem;
     display: flex; 
     flex-direction: column;
-    border: 1px solid black; 
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+    animation: slidein 0.5s;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateX(200%);
+        z-index: 10;
+    }
+    to {
+    transform: translateX(0);
+        z-index: 1;
+    }
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
 .card img {

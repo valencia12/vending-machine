@@ -4,17 +4,15 @@ import classes from './Card.module.css';
 
 const Card = (props) => {
     return (
-        <div className={`${classes.card}`}>
+        <li className={`${classes.card}`} onClick = {props.onClick}>
             <img src={props.image} alt={props.title} />
             <div className={`${classes.cardContent}`}>
-                <h3>
+                <h4>
                     {props.title}
-                </h3>
-                <div>
-                    {props.children}
-                </div>
+                </h4>
             </div>
-        </div>
+            {props.children}
+        </li>
     );
 }
 
