@@ -1,4 +1,4 @@
-.time{
+.time {
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -7,5 +7,10 @@
     height: 35px;
     border: 1px solid black;
     border-radius: 50%;
-    z-index: 10;
+    z-index: 100;
+}
+
+.finished {
+    background-color: #00ff00;
+    color: transparent; 
 }

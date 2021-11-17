@@ -3,7 +3,7 @@ import List from "../components/List/List";
 import CardWithTime from "../components/Card/CardWithTime";
 import useFoodStore from "../state/food";
 
-const OrderList = (props) => {
+const OrderList = () => {
 
     const foodSelected = useFoodStore((state) => state.foodSelected);
     const removeFoodSelected = useFoodStore((state) => state.removeFoodSelected); 
@@ -32,5 +32,4 @@ const OrderList = (props) => {
 
 
 export default OrderList;
-
 
