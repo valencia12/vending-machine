@@ -7,18 +7,18 @@ export default function MenuList() {
 
     const food = useFoodStore(state => state.food);
     const addFoodSelected = useFoodStore(state => state.addFoodSelected); 
-
+    const loading = useFoodStore(state => state.loading);
     return (
         <List>
             {
-                food.map((item, index )=> (
+                !loading ? food.map((item, index )=> (
                     <Card 
                         key={item.id + index} 
                         image={item.thumbnail} 
                         title={item.name}
                         onClick = {() => addFoodSelected(item.id)}
                     />
-                ))
+                )) : <h1>loading....</h1>
             }
         </List>
     );
