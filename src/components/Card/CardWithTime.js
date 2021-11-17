@@ -1,31 +1,27 @@
 import React ,{useEffect, useState} from 'react';
 import classes from './CardWithTime.module.css';
 import Card from './Card';
+import useFoodStore from '../../state/food';
 
-let interval;
 
 const CardWithTime = (props) => {
 
-    const [time, setTime] = useState(props.time);
-    const [isReady, setIsReady] = useState(false);
+    const updateTime = useFoodStore(state => state.updateTime);
+    const selectedFoodTime = useFoodStore(state => state.times[props.index]);
+    const [time, setTime] = useState(selectedFoodTime);
 
     useEffect(() => {
-        interval = setInterval(() => {
+        let interval = setInterval(() => {
             setTime(time => time - 1);
+            updateTime(props.index, selectedFoodTime -1);
         }, 1000);
+
         return () => clearInterval(interval);
     }, []);
-
-    useEffect(() => {
-        if(time === 0){
-            clearInterval(interval);
-            setIsReady(true);
-        }
-    }, [time]);
 
     return <Card {...props}>
         <div className={classes.time}>{time}</div>
     </Card>
 }
 
-export default CardWithTime;
+export default React.memo(CardWithTime);
